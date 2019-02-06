@@ -1,0 +1,200 @@
+<html>
+    <head>
+      <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="let.css">
+         <link rel="stylesheet" href="wss.css">
+        <meta name="viewport" content="width=device-width">
+        
+    </head>
+    <body>
+       <div class="cont">
+           <div class="coast">
+               <div class="relwave">
+                  <div class="wave"></div>
+                   
+               </div>
+            </div>
+                <div class="coast delay">
+               <div class="relwave ">
+                  <div class="wave delay"></div> 
+               </div>
+               </div>
+               <div class="text fltext">E</div>
+               <div class="text ntext">N</div>
+               <div class="text gtext">G</div>
+               <div class="text btext">B</div>
+               <div class="text rtext">R</div>
+               <div class="text Etext">E</div>
+               <div class="text atext">A</div>
+               <div class="text ktext">K</div>
+           
+            
+        </div>
+         <div class="cont2">
+       <div class="text_2 fltext">e</div>
+              <div class="eng">
+               <div class="text_2 n-text">n</div>
+               <div class="text_2 g-text ">g</div>
+               <div class="text_2 b-text">b</div>
+               <div class="text_2 r-text">r</div>
+               <div class="text_2 E-text">e</div>
+               <div class="text_2 a-text">a</div>
+               <div class="text_2 k-text">k</div>
+               <div class="text_2 numtext">'19</div>
+           </div>
+               <div class="opening">
+               <div class="text_2 o-text opening">o</div>
+               <div class="text_2 p-text opening">p</div>
+               <div class="text_2 e2-text opening">e</div>
+               <div class="text_2 n2-text opening">n</div>
+               <div class="text_2 i-text opening">i</div>
+               <div class="text_2 n3-text opening">n</div>
+               <div class="text_2 g2-text opening">g</div>
+           </div>
+        </div>
+        <header class="intro">
+            <div class="slider">
+                <ul>
+                   <li style="background-image: url(academic3.png);">
+                       <div class="center">
+                        <h3>
+                            slide one 
+                        </h3>
+                        </div>
+                    </li>
+                  <li style="background-image: url(Competetion3.png);">
+                       <div class="center">
+                        <h3>
+                            slide two 
+                        </h3>
+                        </div>
+                    </li>
+                    <li style="background-image: url(cover-for-web.png);">
+                       <div class="center">
+                        <h3>
+                            slide three 
+                        </h3>
+                        <button class="apply">apply now </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a class="previous" href="">
+                
+            </a>
+            <a class="next" href="">
+               >>
+            </a>
+                    <div class="hide">
+<form class=" form">
+<label for="name">Name</label>
+<br>
+<input type="text" id="name"><br>
+<label for="phone">Phone</label><br>
+<input type="phone" name="" id="phone"><br>
+<label for="email">Email</label><br>
+<input type="email" name="" id="email"><br>
+<label for="acy">Academic Year</label><br>
+<input type="text" name="" id="acy"><br>
+<label for="uni">University/Faculty</label><br>
+<input type="text" name="" id="uni"><br>
+<input type="submit" name="" value="submit"><br>
+<button class="back">back</button>
+</form>
+</div>
+            
+        </header>
+    </body>
+     <script>
+        $(function(){
+            var slider = $('.slider'),
+                slides = slider.find('li'),
+                curr =0 ,
+                playing = true,
+                slideinterval = setInterval(gonext,4000);
+            slides.eq(curr).addClass('current');
+            //move right
+            function gonext(){
+                curr= curr+1;
+                curr=(curr+slides.length)%(slides.length);
+                slides.eq(curr).addClass('current').removeClass('prev').siblings().removeClass('current');
+               slides.eq(curr).prevAll().addClass('prev');
+                slides.eq(curr).nextAll().removeClass('prev');
+            }
+            //end of moveright
+            //move left
+            function goprev(){
+                curr= curr-1;
+                curr= (curr+slides.length)%(slides.length);
+                slides.eq(curr).addClass('current').removeClass('prev').siblings().removeClass('current');
+                slides.eq(curr).prevAll().addClass('prev');
+                slides.eq(curr).nextAll().removeClass('prev');
+            }
+            // end of move left 
+            $('.next').click(function(e){
+                e.preventDefault();
+                gonext();
+            });
+            $('.previous').click(function(e){
+                e.preventDefault();
+                goprev();
+            });
+//             slider.mouseenter(puase);
+//             slider.mouseleave(puase);
+            function puase (){
+                if(playing){
+                    playing=false;
+                    clearInterval(slideinterval);
+                }
+                else {
+                    playing =true;
+                    setInterval(slideinterval ,4000);
+                }
+            }
+               
+            
+            
+        });
+    </script>
+  
+  <script>
+      var hide = $('.hide'),
+          from =$('.from'),
+          label= from.find('label'),
+          input = from.find('input');
+   $('.apply').click(function(){
+             applynow();
+        });
+      function applynow(){
+            $('.slider').animate({
+                left:'-20000px',
+                opacity: '0',
+        width: '0px'
+            });
+          hide.removeClass('hide').addClass('wrapper');
+          from.addClass('from');
+          label.addClass('label');
+          input.addClass('input');
+        }
+      function goback(){
+          $('.slider').animate({
+              left:'0px',
+                opacity: '1',
+        width: '100%'
+          });
+           $('.back').click(function(){
+             goback();
+        });
+          
+      }
+    </script>
+    <script>
+    $(window).on('load',function(){
+        setTimeout('.cont',4000);
+        setTimeout('.cont2',4000);
+    });
+    
+    </script>
+   
+</html>

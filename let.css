@@ -1,0 +1,124 @@
+body{
+     background-color: #00091B;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cont2{
+ position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 100px;
+    right: 50%;
+    
+}
+.text_2{
+    color: white;
+    font-weight: bold;
+    font-size: 6rem;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    animation: atext 2s ease-in-out infinite;
+}
+.fl-text{
+   left: 0;
+    animation-delay: 100ms;
+}
+.n-text{
+    left: 5rem ;
+    animation-delay: 150ms;
+}
+.g-text{
+    left: 9rem ;
+    animation-delay: 230ms;
+}
+.b-text{
+    left: 18rem ;
+    animation-delay: 370ms;
+}
+.r-text{
+    left: 22rem ;
+    animation-delay: 400ms;
+}
+.E-text{
+    left: 26rem ;
+    animation-delay: 430ms;
+}
+.a-text{
+    left: 30rem ;
+    animation-delay: 480ms;
+}
+.k-text{
+    left: 34rem ;
+    animation-delay: 510ms;
+}
+.numtext{
+    left: 38rem;
+    animation-delay: 540ms;
+}
+.opening{
+    top: 80%;
+    height: 100px;
+}
+.o-text{
+   left: 6rem;
+    top: 70%;
+    animation-delay: 100ms;
+}
+.p-text{
+    left: 10rem ;
+    top: 70%;
+    animation-delay: 150ms;
+}
+.e2-text{
+    left: 14rem ;
+    top: 70%;
+    animation-delay: 230ms;
+}
+.n2-text{
+    left: 18rem ;
+    top: 70%;
+    animation-delay: 370ms;
+}
+.i-text{
+    left: 23rem ;
+    top: 70%;
+    animation-delay: 400ms;
+}
+.n3-text{
+    left: 26rem ;
+    top: 70%;
+    animation-delay: 430ms;
+}
+.g2-text{
+    left: 30rem ;
+    top: 70%;
+    animation-delay: 480ms;
+}
+
+@keyframes atext {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  30% {
+   transform: translate3d(-10rem,-10rem,0);
+  }
+  45% {
+      transform: translate3d(-10rem,-10rem,0);
+   border: 1px solid gray ;
+      
+  }
+     75% {
+        transform: translate3d(-10rem,-10rem,0);
+   border: 2px solid gray ;
+  }
+  100% {
+      transform: translate3d(-10rem,-10rem,0);
+    border: 3px solid gray ;
+  }
+}
